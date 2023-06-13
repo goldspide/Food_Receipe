@@ -8,7 +8,7 @@ class ReceipeListeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Mes recettes"),
+        title: const Text("Mes recettes"),
       ),
       body: ListView(
         children: const [

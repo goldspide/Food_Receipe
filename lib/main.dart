@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:food_receipe/formulaire.dart';
 import 'package:food_receipe/receipe.dart';
 import 'package:food_receipe/receipeListeScreen.dart';
 import 'package:food_receipe/receipeS.dart';
@@ -39,38 +40,39 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Food_Receipe",
-      color: Theme.of(context).colorScheme.inversePrimary,
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey
-      ),
-      home: ReceipeListeScreen(),
-      // home: ReceipeScreen(receipe: Receipe("Pizza facile", "Par David Silvera", "", 50, "Préparer une pizza de A à Z demande beaucoup de temps, mais le gout de la pizza maison en vaut largement la peine. Préparez séparément la pâte, la sauce et la garniture. Une fois que tous ces éléments sont prêts, assemblez le tout et faites cuire votre pizza à température élevée, jusqu'à ce qu'elle soit délicieusement croustillante. ", false),),
+      // title: 'Flutter Demo',
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   useMaterial3: true,
+      // ),
+      home: formulaire()
     );
   }
 }
 
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
+//   final String title;
+//
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
+//
+// class _MyHomePageState extends State<MyHomePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       // title: "Food_Receipe",
+//       // color: Theme.of(context).colorScheme.inversePrimary,
+//       // theme: ThemeData(
+//       //   primarySwatch: Colors.blueGrey
+//       // ),
+//       home: ReceipeListeScreen(),
+//       // home: ReceipeScreen(receipe: Receipe("Pizza facile", "Par David Silvera", "", 50, "Préparer une pizza de A à Z demande beaucoup de temps, mais le gout de la pizza maison en vaut largement la peine. Préparez séparément la pâte, la sauce et la garniture. Une fois que tous ces éléments sont prêts, assemblez le tout et faites cuire votre pizza à température élevée, jusqu'à ce qu'elle soit délicieusement croustillante. ", false),),
+//     );
+//   }
+// }
+//
