@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_receipe/fetch.dart';
 import 'package:food_receipe/insert.dart';
+import 'package:food_receipe/update.dart';
 
 class formulaire extends StatelessWidget {
   const formulaire({Key? key}) : super(key: key);
@@ -54,7 +56,7 @@ class formulaire extends StatelessWidget {
                                 __,
                                 ___,
                                 ) =>
-                            const CreateFood()),
+                            const FecthData()),
                         // MaterialPageRoute(builder: (__){return ProfileScreen();}),
                       );
                     },
@@ -80,7 +82,7 @@ class formulaire extends StatelessWidget {
                                 __,
                                 ___,
                                 ) =>
-                            const CreateFood()),
+                            const UpdateFood()),
                         // MaterialPageRoute(builder: (__){return ProfileScreen();}),
                       );
                     },

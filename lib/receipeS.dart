@@ -24,7 +24,7 @@ class ReceipeScreen extends StatelessWidget {
                     TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
               ),
               Text(
-                "Par David Sierra",
+                "Par David Silera",
                 style: TextStyle(fontSize: 16, color: Colors.grey[500]),
               )
             ],

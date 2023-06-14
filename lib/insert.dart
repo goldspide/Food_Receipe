@@ -21,56 +21,81 @@ class _CreateFoodState extends State<CreateFood> {
         title: const Text("Page d'inserrtion de Donnees"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-            TextField(
-              controller: title,
-              decoration: const InputDecoration(
-                hintText: "Entre le nom du repas"
-              ),
-            ),
-            TextField(
-              controller: user,
-              decoration: const InputDecoration(
-                  hintText: "Entre votre nom"
-              ),
-            ),
-            TextField(
-              controller: imageurl,
-              decoration: const InputDecoration(
-                  hintText: "insere le lien de l\'image"
-              ),
-            ),
-            TextField(
-              controller: isFavorite,
-              decoration: const InputDecoration(
-                  hintText: "Entre true ou false"
-              ),
-            ),
-            // TextField(
-            //   controller: favoriteCount,
-            //   decoration: const InputDecoration(
-            //       hintText: "Entre le nom du repa"
-            //   ),
-            // )
+          child: Container(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          TextField(
+            controller: title,
+            decoration: const InputDecoration(
+                hintText: "Entre le nom du repas",
+                prefixIcon: Icon(Icons.verified_user_outlined),
+                border: OutlineInputBorder()),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextField(
+            controller: user,
+            decoration: const InputDecoration(
+                hintText: "Entre votre nom",
+                prefixIcon: Icon(Icons.verified_user_outlined),
+                border: OutlineInputBorder()),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextField(
+            controller: imageurl,
+            decoration: const InputDecoration(
+                hintText: "insere le lien de l\'image",
+                prefixIcon: Icon(Icons.verified_user_outlined),
+                border: OutlineInputBorder()),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextField(
+            controller: isFavorite,
+            decoration: const InputDecoration(
+                hintText: "Entre true ou false",
+                prefixIcon: Icon(Icons.verified_user_outlined),
+                border: OutlineInputBorder()),
+          ),
+          // TextField(
+          //   controller: favoriteCount,
+          //   decoration: const InputDecoration(
+          //       hintText: "Entre le nom du repa"
+          //   ),
+          // )
 
-            const SizedBox(
-              height: 20,
-            ),
+          const SizedBox(
+            height: 20,
+          ),
 
-            ElevatedButton(onPressed: () {
-              var data = {
-                "title":title.text,
-                "user":user.text,
-                "imsgeUrl":imageurl.text,
-                "isFavorite":isFavorite.text
-              };
-              Api.addfood(data);
-            }, child: const Text("submit")),
-          ]
-        )
-      ),
+          ElevatedButton(
+              onPressed: () {
+                var data = {
+                  "title": title.text,
+                  "user": user.text,
+                  "imageUrl": imageurl.text,
+                  "isFavorite": isFavorite.text
+                };
+                Api.addfood(data);
+                setState(() {
+                  title.text = "";
+                  user.text = "";
+                  imageurl.text = "";
+                  isFavorite.text = "";
+                 });
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue.withOpacity(0.6),
+                side: const BorderSide(color: Colors.cyan),
+                shape: const StadiumBorder(),
+              ),
+              child: const Text("submit")),
+        ]),
+      )),
     );
   }
 }

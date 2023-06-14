@@ -54,4 +54,14 @@ class Api {
     }
 
   }
+
+  static updateFood(id) async {
+    var url = Uri.parse("${baseUrl}food/:$id");
+    final res = await http.delete(url);
+    if(res.statusCode == 200){
+      print(jsonDecode(res.body));
+    }else{
+      print("failed to delete");
+    }
+  }
 }
