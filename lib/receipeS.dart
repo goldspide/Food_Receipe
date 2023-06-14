@@ -24,13 +24,13 @@ class ReceipeScreen extends StatelessWidget {
                     TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
               ),
               Text(
-                "Par David Silera",
+                "Par David Sierra",
                 style: TextStyle(fontSize: 16, color: Colors.grey[500]),
               )
             ],
           ),
         ),
-        FavoriteWidget(isFavorited: false, favoriteCount: 44,)
+        const FavoriteWidget(isFavorited: false, favoriteCount: 44,)
       ],
     ),
   );
@@ -71,6 +71,7 @@ class ReceipeScreen extends StatelessWidget {
       softWrap: true,
     ),
   );
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
