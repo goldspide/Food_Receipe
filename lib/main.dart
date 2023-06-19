@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:food_receipe/fetch.dart';
 import 'package:food_receipe/formulaire.dart';
+import 'package:food_receipe/insert.dart';
 import 'package:food_receipe/receipe.dart';
 import 'package:food_receipe/receipeListeScreen.dart';
 import 'package:food_receipe/receipeS.dart';
@@ -40,14 +42,14 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // title: 'Flutter Demo',
-      // theme: ThemeData(
-      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      //   useMaterial3: true,
-      // ),
-      home: formulaire()
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const FecthData()
     );
   }
 }

@@ -5,7 +5,7 @@ import 'package:food_receipe/receipe.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  static const baseUrl ="http://192.168.100.44:3804/";
+  static const baseUrl ="http://192.168.100.44:3805/";
 
   static addfood(Map data) async{
     var url = Uri.parse("${baseUrl}food");
@@ -15,6 +15,28 @@ class Api {
       if(res.statusCode == 200){
         var data = jsonDecode(res.body.toString());
         print(data);
+
+
+      }else{
+        print("failed to get response");
+
+      }
+
+    }catch (e){
+      debugPrint(e.toString());
+
+    }
+  }
+
+  static updateood(Map data) async{
+    var url = Uri.parse("${baseUrl}food");
+    try{
+      final res = await http.post(url, body:data);
+
+      if(res.statusCode == 200){
+        var data = jsonDecode(res.body.toString());
+        print(data);
+
 
       }else{
         print("failed to get response");
