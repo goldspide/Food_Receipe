@@ -20,7 +20,7 @@ class _FecthDataState extends State<FecthData> {
   @override
   void initState() {
     super.initState();
-    this.fetchFood();
+    // this.fetchFood();
   }
 
   fetchFood() async {
@@ -28,11 +28,22 @@ class _FecthDataState extends State<FecthData> {
     var url = Uri.parse("${baseUrl}food");
     var response = await http.get(url);
     if (response.statusCode == 200) {
-      var items = json.decode(response.body)['foods'];
+      var items = json.decode(response.body);
       print(items);
+      for(var data in items){
+        food.add(Receipe(  data['title'],
+          data['user'],
+          data['imageUrl'],
+          data['favoriteCount'],
+          data['description'],
+          data['isFavorite'],
+          data['_id']));
+      }
       setState(() {
         // food = items.map((e) => Receipe.fromMap(e));
         });
+      food.forEach((someData)=>print("nom : ${someData.title}"));
+      print(food);
     } else {
       setState(() {
         food = [];
@@ -46,7 +57,7 @@ class _FecthDataState extends State<FecthData> {
     var response = await http.delete(url);
     if (response.statusCode == 200) {
       var items = json.decode(response.body)['foods'];
-      print(items);
+      // print(items);
       setState(() {
         food = items;
       });
@@ -62,7 +73,7 @@ class _FecthDataState extends State<FecthData> {
     var response = await http.patch(url);
     if (response.statusCode == 200) {
       var items = json.decode(response.body)['foods'];
-      print(items);
+      // print(items);
       setState(() {
         food = items;
       });
@@ -108,10 +119,10 @@ class _FecthDataState extends State<FecthData> {
   Widget getBody() {
     // List items = ["1", "2"];
     return ListView.builder(
-        itemCount: food.length,
+        itemCount: 4,
         itemBuilder: (context, index) {
-          return
-              // getCard(food[index]);
+          return Container(color: Colors.blue,);
+              getCard(food[index]);
 
               Dismissible(
                   key: Key(food[index].id),
@@ -134,6 +145,7 @@ class _FecthDataState extends State<FecthData> {
   }
 
   Widget getCard(index) {
+
     var user = index['user'];
     var title = index['title'];
     var ide = index['_id'];

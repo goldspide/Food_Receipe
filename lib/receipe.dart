@@ -9,7 +9,7 @@ class Receipe {
   Receipe(this.title, this.user, this.imageUrl,this.favoriteCount,this.description,this.isFavorite, this.id);
 
    Map<String, dynamic> toJson(){
-      final Map<String, dynamic> data = new Map<String, dynamic>();
+      final Map<String, dynamic> data =  Map<String, dynamic>();
       data['title'] = title;
       data['user'] = user;
       data['imageUrl']= imageUrl;
